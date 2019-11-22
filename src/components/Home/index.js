@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 export default class Home extends Component {
     constructor(props) {
         super(props);
-        this.state({
+        this.state={
             msg: "我是一个Home组件"
-        })
+        }
     }
     render() {
         return (
