@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Home from './components/Home'
+import Home from './components/Home';
+import News from './components/News';
 
 export default class App extends Component {
   render() {
@@ -21,6 +22,8 @@ export default class App extends Component {
             Learn React
           </a>
           <Home />
+          <hr />
+          <News />
         </header>
       </div>
     );
