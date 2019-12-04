@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import './index.less';
-import logo from '../../assets/images/赤座灯里.jpg';
+import './index.css';
+import logo from '../../assets/images/赤座灯里.jpg'
 
-export default class News extends Component {
+/**
+ * 绑定属性注意：
+ * 1、class=》className
+ * 2、for=》htmlFor
+ * 3、行内样式style里用对象
+ */
+export default class Demo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            msg: "新闻",
+            msg: "我是一个Demo组件",
             list1: ["内容1", "内容2", "内容3"],
             list2: [<h4 key="1">标签内容1</h4>, <h4 key="2">标签内容2</h4>, <h4 key="3">标签内容3</h4>],
             list3: [
@@ -16,12 +22,22 @@ export default class News extends Component {
             ]
         }
     }
+    run() {
+        alert("我是一个方法");
+    }
     render() {
         let list = this.state.list1.map((value, key) => {
             return <li key={key}>{value}</li>
         })
         return (
             <div>
+                <h2>Hello World !</h2>
+                <button onClick={this.run}>获取数据</button>
+                <h4 name={this.state.msg} className="fontColorRed">{this.state.msg}</h4>
+                <label htmlFor="name">姓名</label>
+                <input id="name" />
+                <div style={{ color: "blue" }}>行内样式Div</div>
+                <br />
                 {this.state.msg}
                 <br />
                 <img className="img" alt="logo" src={logo} />
