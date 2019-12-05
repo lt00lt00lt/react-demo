@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './TodoList.css';
+import Storage from '../../util/storage'
 
 /**
  * 待办事项页面
@@ -26,11 +27,13 @@ export default class TodoList extends Component {
             tempList.push({
                 title,
                 checked: false
-            })
+            });
             //改变后的值赋值给list
             this.setState({
                 list: tempList,
-            })
+            });
+            //保存缓存数据
+            Storage.set("TodoList", tempList);
             //让input输入框的值重置为空
             this.refs.title.value = "";
         }
@@ -42,7 +45,9 @@ export default class TodoList extends Component {
         tempList.splice(key, 1);
         this.setState({
             list: tempList,
-        })
+        });
+        //保存缓存数据
+        Storage.set("TodoList", tempList);
     }
 
     //点击Checkbox切换列表方法
@@ -50,8 +55,18 @@ export default class TodoList extends Component {
         let tempList = this.state.list;
         tempList[key].checked = !tempList[key].checked;
         this.setState({
-            list: tempList
-        })
+            list: tempList,
+        });
+        //保存缓存数据
+        Storage.set("TodoList", tempList);
+    }
+
+    componentDidMount() {
+        //从缓存中获取数据
+        let list = Storage.get("TodoList");
+        if (list) {
+            this.setState({ list });
+        }
     }
 
     render() {
@@ -59,7 +74,7 @@ export default class TodoList extends Component {
             <div>
                 添加代办事项
                 <input ref="title" onKeyUp={this.addList} />
-                <button onClick={this.addList}>增加</button>
+                按回车键添加
                 <hr style={{ border: "dotted" }} />
                 <h4>待办事项</h4>
                 <hr style={{ border: "dotted" }} />
