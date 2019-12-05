@@ -3,10 +3,12 @@ import './index.css';
 import logo from '../../assets/images/赤座灯里.jpg'
 
 /**
+ * 学习基础组件
  * 绑定属性注意：
  * 1、class=》className
  * 2、for=》htmlFor
  * 3、行内样式style里用对象
+ * @author LongTeng 2019-11-30
  */
 export default class Demo extends Component {
     constructor(props) {

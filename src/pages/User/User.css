@@ -1,0 +1,17 @@
+/* 左右分栏 */
+.content{
+    width:1280px;
+    height: 500px;
+    display: flex;
+    color: black;
+}
+.content .left{
+    width: 200px;
+    height: 500px;
+    background: #eee;
+}
+.content .right{
+    flex: 1;
+    height: 500px;
+    border: 1px solid #eee;
+}

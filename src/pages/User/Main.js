@@ -1,22 +1,20 @@
 import React, { Component } from 'react'
-import NewsList from '../../components/NewsList'
 
 /**
- * 新闻页面
+ * 个人中心二级页面
  * @author LongTeng 2019-12-05
  */
-export default class News extends Component {
-    constructor(props) {
+export default class Main extends Component {
+    constructor(props){
         super(props);
-        this.state = {
-            
+        this.state={
+
         }
     }
-    
     render() {
         return (
             <div>
-                <NewsList />
+                个人中心
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './TodoList.css';
-import Storage from '../../util/storage'
+import Storage from '../../utils/storage'
 
 /**
  * 待办事项页面
