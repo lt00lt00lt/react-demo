@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Axios from 'axios';
+
 /**
  * 主页组件
  * @author LongTeng 2019-12-05
